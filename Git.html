@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>すしネタ</title>
+     <style>
+      body{
+           background-image: url("背景.png")
+      }
+      form, label{
+          font-size: 30px;
+     }
+     h1{
+          font-size: 30px;
+     }
+     p{
+          font-size: 20px;
+     }
+     </style>
+</head>
+<body>
+     <center>
+     <form name="samon.html"action="samon.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---ネタを選んでください---</option>
+               <option value="maguro.html"/>中とろ</option>
+               <option value="samon.html"/>炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+               <option value="Git.html">オクトキャット</option>
+          </select>
+     </form>
+     <img src="オクトキャット.jpg" alt="オクトキャット" width=30% height=30%>
+     <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+     </script>
+     <h1>gitの使い方</h1>
+     <p><strong>基本的に小さい作業の単位でコミットを行い、ある程度作業がひと段落した時にプッシュをするのが一般的です。<br>コミットの作業がわかりやすいように、コミットメッセージを残しておくと、ログを追っていく時に役立ちます。</strong></p>
+
+     <h1>github-pageの作り方</h1>
+     <p><strong>1. ユーザ名.github.io という名前のリポジトリを作成する。<br>
+               
+               ※例えば GitHub のユーザ名(アカウント名)が hoge の場合には hoge.github.io で作成。<br>
+               
+               2. そこに .html や .md (マークダウン) ファイルを Push する。<br>
+               
+               公開URLは https://ユーザ名.github.io/ と成ります。<br>
+               
+               使用例：https://nakamura001.github.io/<br></strong></p>
+
+     <h1>github-pageの更新の仕方</h1>
+     <p><strong>1. リポジトリを自身のアカウントに Fork してローカルにクローンを作成します<br>
+               2. npm i コマンドで開発環境をインストールします<br>
+               3. 作業用ブランチを切ります<br>
+               4. pages フォルダー以下の該当ファイル (.md) を更新します<br>
+               5. ファイルを更新したら、以下のビルド コマンドを実行します<br>
+               6. コマンドを実行すると dist フォルダーに html に変換されたページ ファイル (ヘッダ部とコンテンツ部で分かれます) が作成されます (※これは無視して結構です)<br>
+               7. その後に自動的にページ フォルダーが作成され、フォルダー内に完成版のページ ファイル (index.html) が作成されます<br>
+               8. ビルドが完了したら npm run test を実行すると自動でテスト用 Web サーバーとブラウザーが立ち上がります (サーバーを停止するには [Ctrl] + C を押してください)<br>
+               9. ページ レビューを行って問題がなければ EsriJapan/arcgis-dev-resources の master ブランチにプルリクエストしてください<br>
+               10. 管理者 (@ynunokawa) がマージをして gh-pages ブランチに更新内容を反映します<br>
+               11. ArcGIS for Developers 開発リソース集 のページに反映され更新作業は完了です<br></strong></p>
+     </center>
+</body>
+</html>
