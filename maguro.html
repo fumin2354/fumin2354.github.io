@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>すしネタ</title>
+     <style>
+     body{
+          background-image: url("背景.png")
+     }
+     form, label{
+          font-size: 30px;
+     }
+     </style>
+</head>
+<body>
+     <form name="maguro.html"action="maguro.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---ネタを選んでください---</option>
+               <option value="maguro.html"/>中とろ</option>
+               <option value="samon.html"/>炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+          </select>
+     </form>
+     <img src="中トロ.jpg" alt="中トロ" width=60% height=60%>
+     <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+     </script>
+</body>
+</html>
