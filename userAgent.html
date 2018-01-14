@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>ブラウザ判定</title>
+     <style>
+      h1{
+        border: solid 3px cornflowerblue;
+        color: cornflowerblue;
+        padding: 7px;
+        width:80%;
+        border-radius: 50px;
+      }
+
+      form, label{
+          font-size: 20px;
+      }
+      
+      
+     </style>
+</head>
+<body>
+     <form name="samon.html" action="samon.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---項目を選んでください---</option>
+               <option value="maguro.html">中とろ</option>
+               <option value="samon.html">炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+               <option value="Git.html">オクトキャット</option>
+               <option value="images.html">お気に入りの画像集へ</option>
+               <option value="userAgent.html">ブラウザの判定</option>
+               <option value="window.html">windowメソッドについて</option>
+               <option value="console.html">consoleオブジェクトについて</option>
+               <option value="timer1.html">タイマー</option>
+          </select>
+     </form>
+     <center>
+     <h1>あなたのお使いのブラウザは...</h1> 
+     <p id="userAgent"></p>
+     <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+
+        var nvName = navigator.appName;
+        var nvVersion = navigator.appVersion;
+
+        //Internet Explorer
+        if (nvName.indexOf("Internet Explorer") > -1) {
+            document.write("Internet Explorerです。");
+        }
+        else {
+        //Opera
+        if (nvName.indexOf("Opera") > -1) {
+            document.write("Operaです。");
+        }
+        else {
+        //Safari
+        if (nvVersion.indexOf("Safari") > -1) {
+        //Safari.Chrome
+        if (nvVersion.indexOf("Chrome") > -1) {
+             document.write("Google Chromeです。");
+        }
+        else {
+            document.write("Safariです。");
+            }
+        }
+        else {
+        //FireFox.etc
+        if (nvUsAgent.indexOf("Firefox") > -1) {
+             document.write("FireFoxです。");
+        }
+        else {
+             document.write("etc...");
+                 }
+            }
+         }
+    }
+     </script>    
+
+    <h1>バージョンは...</h1>
+    <p id="appVersion"></p>
+
+    <script>
+        document.getElementById("appVersion").innerHTML = navigator.appVersion;
+    </script>
+
+        <h1><strong>です。</strong></h1>
+    </center>
+</body>
+</html>

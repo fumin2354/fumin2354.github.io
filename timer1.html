@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>タイマー</title>
+     <style>
+      body{
+           background-image: url("背景2.gif");
+           background-repeat: no-repeat;
+           background-size: cover;
+      }
+      form, label{
+          font-size: 20px;
+     }
+     </style>
+</head>
+<body>
+     <form name="samon.html" action="samon.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---項目を選んでください---</option>
+               <option value="maguro.html">中とろ</option>
+               <option value="samon.html">炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+               <option value="Git.html">オクトキャット</option>
+               <option value="images.html">お気に入りの画像集へ</option>
+               <option value="userAgent.html">ブラウザの判定</option>
+               <option value="window.html">windowメソッドについて</option>
+               <option value="console.html">consoleオブジェクトについて</option>
+               <option value="timer1.html">タイマー</option>
+          </select>
+     </form>
+     <br>
+
+     <center>
+          <form name="form">
+               <input name="min" value="00" size=2>
+               <input name="sec" value="00" size=2>
+               <br>
+               <input type="button" value="3分セット" onClick="timer_buttoninput_set(3,0)">
+               <input type="button" value="5分セット" onClick="timer_buttoninput_set(5,0)">
+               <br>
+               <input type="button" value="スタート/ストップ" onClick="timer_startandstop()">
+               <input type="button" value="リセット" onClick="timer_buttoninput_set(0,0)">
+          </form>
+     </center>
+     <script>
+          var preset_tmp_sec = 0;
+          var timerflag = 0;
+          var timerset ;
+
+          function timer_startandstop(){
+
+          timerflag = timerflag + 1;
+
+          switch(timerflag) {
+	          case 1:
+		          timer_forminput_set();
+		          timerset = setInterval("timer_tick()" , 1000);
+		          break;
+	          case 2:
+		          clearInterval(timerset);
+		          timerflag = 0;
+		          break;
+               default:
+                    clearInterval(timerset);
+                    document.form.min.value = "00";
+                    document.form.sec.value = "00";
+                    break;
+	          }
+          }
+
+
+          function timer_tick() {
+
+          preset_tmp_sec = preset_tmp_sec - 1;
+
+          sec = preset_tmp_sec %60;
+          min = Math.floor(preset_tmp_sec /60) % 60;
+
+          if(min<10){min = "0" + min;}
+          if(sec<10){sec = "0" + sec;}
+
+          document.form.min.value = min;
+          document.form.sec.value = sec;
+
+          if (preset_tmp_sec <= 0) {
+               document.form.min.value = "00";
+               document.form.sec.value = "00";
+
+               clearInterval(timerset);
+
+               alert("お時間になりました！");
+
+	          }
+          }
+
+          function timer_forminput_set() {
+
+          var min_f = 0;
+          var sec_f = 0;
+
+          min_f = eval(document.form.min.value);
+          sec_f = eval(document.form.sec.value);
+
+          m1 = min_f * 60;
+          s1 = sec_f;
+
+          preset_tmp_sec =  m1 + s1 ;
+          }
+
+          function timer_buttoninput_set(min_b , sec_b) {
+          clearInterval(timerset);
+
+          if(min_b<10){min_b = "0" + min_b;}
+          if(sec_b<10){sec_b = "0" + sec_b;}
+
+          document.form.min.value = min_b;
+          document.form.sec.value = sec_b;
+
+          return false
+          }
+
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+     </script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>consoleオブジェクト</title>
+     <style>
+     form, label{
+          font-size: 20px;
+     }
+
+     body{
+         background-image: url('背景.jpg');
+     }
+
+     h1{
+          position: relative;
+          padding: 0% 0% .1%;
+     }
+     h1::after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 85%;
+          height: 10px;
+          background: linear-gradient(to left, #ffffff,orangered);
+     }
+
+     p span strong{
+          font-size: 35px;
+     }
+
+
+     h2{
+          border-left: solid 10px;
+          border-left-color: darkcyan;
+          position: relative;
+          padding: 0% 0% .1%;
+     }
+
+     h2::after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 85%;
+          height: 3px;
+          background: linear-gradient(to left, #ffffff,orangered);
+     }
+
+     h3{
+          border-top: solid 8px;
+          border-bottom: solid 8px;
+          border-left: solid 8px;
+          border-right: solid 8px;
+          border-left-color: cornflowerblue;
+          border-right-color: cornflowerblue; 
+          padding: 0.2em 2em;
+          width:14.5%;
+          font-size: 30px;
+     }
+
+     strong{
+          color: red;
+     }
+
+     a{
+        color: blue;
+        font-size: 19px;
+     }
+
+     a:hover{
+	    opacity: 0.7;
+     }
+
+     #dai{
+          font-size: 30px;
+     }
+
+     #sll{
+          font-size: 11px;
+     }
+
+     #warn{
+          border-top: solid 8px;
+          border-bottom: solid 8px;
+          border-left: solid 8px;
+          border-right: solid 8px;
+          border-left-color: darkorange;
+          border-right-color: darkorange; 
+          padding: 0.2em 2em;
+          width:15.5%;
+          font-size: 30px;
+     }
+
+     #iro{
+          color: gold;
+          font-size: 35px;
+     }
+
+     #error{
+          border-top: solid 8px;
+          border-bottom: solid 8px;
+          border-left: solid 8px;
+          border-right: solid 8px;
+          border-left-color: yellowgreen;
+          border-right-color: yellowgreen; 
+          padding: 0.2em 2em;
+          width:15.5%;
+          font-size: 30px;
+     }
+
+     #aka{
+          color: tomato;
+          font-size: 35px;
+     }
+
+     #table{
+          border-top: solid 8px;
+          border-bottom: solid 8px;
+          border-left: solid 8px;
+          border-right: solid 8px;
+          border-left-color: orchid;
+          border-right-color: orchid; 
+          padding: 0.2em 2em;
+          width:15.5%;
+          font-size: 30px;
+     }
+
+     footer p{
+            background-color: #e6e6e6;
+            text-align: right;
+            font-size: 17px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 20px;
+            padding: 80px 0 14px 0;
+     }
+
+     a{
+        color: blue;
+        font-size: 19px;
+     }
+
+     a:hover{
+	    opacity: 0.7;
+     }
+
+
+     </style>
+</head>
+<body>
+     <form name="samon.html" action="samon.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---項目を選んでください---</option>
+               <option value="maguro.html">中とろ</option>
+               <option value="samon.html">炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+               <option value="Git.html">オクトキャット</option>
+               <option value="images.html">お気に入りの画像集へ</option>
+               <option value="userAgent.html">ブラウザの判定</option>
+               <option value="window.html">windowメソッドについて</option>
+               <option value="console.html">consoleオブジェクトについて</option>
+               <option value="timer1.html">タイマー</option>
+          </select>
+     </form>
+
+     <h1>consoleオブジェクトの種類と使い方について</h1>
+
+     <p id="dai">どうも皆さん、おはこんばんにちは私です。</p>
+
+     <p>今回は皆さんが今まで使ってきたconsoleオブジェクトについて深く掘り下げていきたいと思います。</p>
+
+     <p>と<span><strong>その前に!!!</strong></span>consoleオブジェクトとは何かという人も中にはいるかもしれません。<br>
+        そういった人のためにも、まずはconsoleオブジェクトについて簡単にご説明したいと思います。</p>
+     <br>
+
+     <h2>コンソールについて</h2>
+
+     <p>consoleオブジェクトについて説明する前にまずはコンソールというものについてを知っておく必要があります。<br></p>
+
+     <p>コンソールとは各ブラウザに実装されている<strong>WEBページの動作確認</strong>、<strong>またそのデバッグ等</strong>に用いられているものです。<br>
+        そしてコンソールにアクセスして色々なアプローチを与えるのが、冒頭でも述べているconsoleオブジェクトになります。</p>
+     <br>
+     
+     <p>こちらの赤丸で囲まれているのがコンソールになります。</p>
+     <p>☟　☟　☟　☟　☟　☟</p>
+     <img src="見本.jpg" alt="見本" width=40% height=40%>
+     <br>
+     <br>
+
+     <h2>consoleオブジェクトの種類</h2>
+
+     <p id="dai">はい、じゃここからが本題になります。</p>
+
+     <p>consoleオブジェクトの種類といっても一般に知られているのはだいたいconsole.logぐらいだと思います。</p>
+
+     <p id="dai"><strong>ですが、それは間違いです。</strong></p>
+
+     <p>実はその種類はconsole.logを含め<span><strong>19種類</strong></span>もあるんです!!!</p>
+
+     <p id="sll">(はいここまで無駄に字をデカくしたり、赤くしたり、!マーク出したりしてましたがここからは普通にやります。)</p>
+     <br>
+
+     <p>全部を紹介したいところですがこの通り数が多いため、今回は有用かつ簡単に扱えるもの(つまりはド定番ですね)を厳選して紹介したいと思います。<br>
+        なので、全部を知りたいよという方はこのサイトをささっと閉じて頂いてこちらのサイトをご覧になってください。</p>
+     <br>
+
+     <a href="https://trskeyzzy.github.io/console.html">サイトはこちら</a>
+     <br>
+     <br>
+
+     <h3>infoメソッド</h3>
+     <p>コンソールに情報メッセージを出力するメソッドで、簡単に言うと!マークを出して注目させるというものになります。</p>
+     <p>コードがこちら☟</p>
+     <textarea name="info" cols="100" rows="5">
+
+          <script>
+               console.info('注目');
+          </script>
+     </textarea>
+     <br>
+     <p>☟　☟　☟　☟　☟　☟</p>
+     <img src="見本2.jpg" alt="見本2">
+     <br>
+
+     <h3 id="warn">warnメソッド</h3>
+     <p>このメソッドはさっきのメソッドと少し似ていますが、こちらが表しているのは<span id="iro">警告!!!</span>という意味になります。</p>
+     <p>コードがこちら☟</p>
+     <textarea name="warn" cols="100" rows="5">
+
+          <script>
+               console.warn('警告');
+          </script>
+     </textarea>
+     <br>
+     <p>☟　☟　☟　☟　☟　☟</p>
+     <img src="見本3.jpg" alt="見本3">
+     <br>
+
+     <h3 id="error">errorメソッド</h3>
+     <p>このメソッドはその名の通り、<span id="aka">エラー</span>表示を出すことができます。<br>
+        よくあるやつですね。</p>
+     <p>コードがこちら</p>
+     <textarea name="error" cols="100" rows="5">
+
+          <script>
+               console.error('エラー');
+          </script>
+     </textarea>
+     <br>
+     <p>☟　☟　☟　☟　☟　☟</p>
+     <img src="見本4.jpg" alt="見本4">
+     <br>
+
+     <h3 id="table">tableメソッド</h3>
+     <p>このメソッドは今まで紹介してきたようなマークがつくだけでなく、コンソール画面の見た目から変わるもので<br>
+        ちょっと見栄えがよくなります。(個人的意見ですが）オブジェクトの中身をテーブル形式で見れるのが魅力ですね。</p>
+     <p>コードがこちら☟</p>
+     <textarea name="table" cols="100" rows="5">
+
+          <script>
+               console.table(['りんご', 'みかん', 'バナナ']);
+          </script>
+     </textarea>
+     <br>
+     <p>☟　☟　☟　☟　☟　☟</p>
+     <img src="見本5.jpg" alt="見本5">
+     <br>
+
+     <h2>終わりに</h2>
+
+     <p>さて、他にも紹介したいものはございますが今日はこの辺で...</p>
+     <p>今回ご紹介した情報が皆様のさらなる成長に繋がることを心から願っております。</p>
+     <p>最後にこの記事を最後まで読んでいただい方、誠にありがとうございました。</p>
+     <br>
+
+     <footer>
+          <a href="console.html" class="top">↑TOP</a>
+          <p>©2018fumin2354</p>
+     </footer>
+
+     
+     <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+         
+     </script>
+</body>
+</html>

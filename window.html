@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>windowメソッド</title>
+     <style>
+     body{
+         background-image: url('背景.jpg');
+     }
+
+     h1{
+          position: relative;
+          padding: 0% 0% .1%;
+     }
+     h1::after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 85%;
+          height: 10px;
+          background: linear-gradient(to left, #ffffff,cornflowerblue);
+     }
+
+     h2{
+          border-left: solid 10px;
+          border-left-color: red;
+     }
+     h3{
+          border-left: solid 10px;
+          border-left-color: red;
+          position: relative;
+          padding: 0% 0% .1%;
+     }
+
+     h3::after{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 85%;
+          height: 3px;
+          background: linear-gradient(to left, #ffffff,cornflowerblue);
+     }
+
+      form, label{
+          font-size: 20px;
+     }
+
+     #close{
+          border-left: solid 10px;
+          border-left-color: blue;
+     }
+
+     #focus{
+          border-left: solid 10px;
+          border-left-color: yellow;
+     }
+
+     footer p{
+            background-color: #e6e6e6;
+            text-align: right;
+            font-size: 17px;
+            color: #808080;
+            margin-bottom: 0;
+            margin-top: 20px;
+            padding: 80px 0 14px 0;
+     }
+
+     a{
+        color: blue;
+        font-size: 19px;
+     }
+
+     a:hover{
+	    opacity: 0.7;
+     }
+     </style>
+</head>
+<body>
+     <form name="samon.html" action="samon.html">
+               <label for="drop">メニュー:</label>
+          <select name="drop" id="drop">
+               <option value="">---項目を選んでください---</option>
+               <option value="maguro.html">中とろ</option>
+               <option value="samon.html">炙りサーモン</option>
+               <option value="gunkan.html">マヨコーン軍艦</option>
+               <option value="Git.html">オクトキャット</option>
+               <option value="images.html">お気に入りの画像集へ</option>
+               <option value="userAgent.html">ブラウザの判定</option>
+               <option value="window.html">windowメソッドについて</option>
+               <option value="console.html">consoleオブジェクトについて</option>
+               <option value="timer1.html">タイマー</option>
+          </select>
+     </form>
+
+     <h1>用途別windowメソッドの使用方法</h1>
+
+     <h2>window.open()メソッド</h2>
+     <p>このメソッドは今までのような現在のページでリンクを開く方法とは違い、<br>
+     別のページでリンクを開くメソッドになります。<br>サンプルはこちらになります。</p>
+
+     <form>
+            <input type="button" value="サンプル1" onclick="samplewindow1()">
+     </form>
+     <br>
+
+     <p>コードがこちら☟</p>
+
+     <h3>HTML</h3>
+     <textarea name="one" rows="8" cols="100">
+        <body>
+            <form>
+             <input type="button" value="サンプル" onclick="samplewindow1()">
+            </form>
+        </body>
+     </textarea>
+     <br>
+
+     <h3>javascript</h3>
+     <textarea name="one" rows="8" cols="100">
+         <script>
+          function samplewindow1(){
+            window.open('sample1.html', 'sample1', 'width=300, height=200,');
+         }
+         </script>
+     </textarea>
+     <br>
+
+
+     <h2 id="close">window.close()メソッド</h2>
+
+     <p>このメソッドは現在のページ、またそのページで開かれた別のページを閉じるメソッドになります。<br>
+        サンプルはこちらになります。</p>
+
+     <form>
+        <input type="button" value="サンプル2" onclick="samplewindow2()">
+     </form>
+     <br>
+
+     <p>コードがこちら☟</p>
+
+     <h3 id="close">HTML</h3>
+     <textarea name="one" rows="8" cols="100">
+        <body>
+            <form>
+                <input type="button" value="サンプル2" onclick="samplewindow2()">
+            </form>
+        </body>
+     </textarea>
+     <br>
+
+     <h3 id="close">javascript</h3>
+     <textarea name="one" rows="8" cols="100">
+        <script>
+         function samplewindow2(){
+            window.close();
+        }
+        </script>
+     </textarea>
+     <br>
+
+
+     <h2 id="focus">window.focus()メソッド</h2>
+
+     <p>このメソッドは新しくページを開いて表示させる際に、一番手前に新しいページを<br>
+        表示させるメソッドになります。<br>サンプルはこちらになります。</p>
+     <font color='red'><p>※こちらのサンプルでは、表示させた際すでに手前に表示されているのでボタンを<br>
+        押しても反応はありません。</p>
+     </font>
+    <form>
+        <input type="button" value="サンプル3" onclick="samplewindow3()">
+    </form>
+    <br>
+
+    <p>コードがこちら☟</p>
+
+    <h3 id="focus">HTML</h3>
+    <textarea name="one" rows="8" cols="100">
+        <body>
+            <form>
+                <input type="button" value="サンプル3" onclick="samplewindow3()">
+            </form>
+        </body>
+    </textarea>
+    <br>
+
+    <h3 id="focus">javascript</h3>
+    <textarea name="one" rows="8" cols="100">
+        <script>
+         function samplewindow3(){
+            window.focus();
+        }
+        </script>
+    </textarea>
+    <br>
+
+    <footer>
+        <a href="window.html" class="top">↑TOP</a>
+        <p>©2018fumin2354</p>
+    </footer>
+
+     <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                   document.getElementById('drop').addEventListener('change',function(){
+                       location.href = this.value;
+                   });
+               });
+        
+        function samplewindow1(){
+            window.open('sample1.html', 'sample1', 'width=300, height=200,');
+        }
+
+        function samplewindow2(){
+            window.open('sample2.html', 'sample2', 'width=300, height=200,');
+        }
+
+        function samplewindow3(){
+            window.open('sample3.html', 'sample3', 'width=300, height=200,');
+        }
+     </script>
+</body>
+</html>
