@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>スライドパネル</title>
+     <link rel="stylesheet" href="jQuery2.css">
+</head>
+<body>
+     <p class="open">ボタン</p>
+     <div id="slideBox">
+          スライドパネルのサンプルです。ボタンを押すと閉じたり、開いたりします。
+     </div>
+     <h1>参考サイト</h1>
+     <a href="http://happymondays.pecori.jp/jquery-sample/#">http://happymondays.pecori.jp/jquery-sample/#</a>
+     <script
+          src="http://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossorigin="anonymous"></script>
+     <script>
+     $(function(){
+          $(".open").click(function(){
+          $("#slideBox").slideToggle("slow");
+    });
+});
+     </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>アコーディオンメニュー</title>
+     <link rel="stylesheet" href="jQuery.css">
+</head>
+<body>
+     <h1>味噌ラーメン</h1>
+     <dl id="accordion">
+          <dt><a href="">トッピング</a></dt>
+          <dd>
+               <a href="#">チャーシュー</a>
+               <br>
+               <a href="#">海苔</a>
+          </dd>
+          <dt><a href="">油の量</a></dt>
+          <dd>
+               <a href="#">ギトギト</a>
+               <br>
+               <a href="#">ドンピシャ</a>
+               <br>
+               <a href="#">ちょいブラ</a>
+          </dd>
+          <dt><a href="">麵の硬さ</a></dt>
+          <dd>
+               <a href="#">やわ</a>
+               <br>
+               <a href="#">ふつう</a>
+               <br>
+               <a href="#">カタ</a>
+               <br>
+               <a href="#">バリ</a>
+               <br>
+               <a href="#">ガネ</a>
+          </dd>
+     </dl>
+     <br>
+     <h1>説明</h1>
+     <p>メニューボタンを押すとサブメニューが開きます。</p>
+     <h1>参考サイト</h1>
+     <a href="http://happymondays.pecori.jp/jquery-sample/#">http://happymondays.pecori.jp/jquery-sample/#</a>
+     <script
+          src="http://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossorigin="anonymous"></script>
+     
+     <script>
+     $(function() {
+          $('#accordion dd').hide();
+          $('#accordion dt a').click(function(){
+               $('#accordion dd').slideUp();
+               $(this).parent().next().slideDown();
+               return false;
+          });
+     });
+     </script>
+</body>
+</html>
