@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>ランチメニュー</title>
+</head>
+<body>
+          <div id="menu">
+                    <h1>メニューを選んでください。</h1>
+                    <form name="cookie_form" action="radio">
+                      <input type="radio" name="radio" value="蒙古タンメン" />蒙古タンメン
+                      <br>
+                      <input type="radio" name="radio" value="一楽ラーメン" />一楽ラーメン
+                      <br>
+                      <input type="radio" name="radio" value="節骨ラーメン" />節骨ラーメン
+                      <br>
+                      <h1>オプションはどうですかな？</h1>
+                      <input type="checkbox" name="check" id="mori" />大盛
+                      <br>
+                      <input type="checkbox" name="check" id="hantya" />半チャーハン
+                      <br>
+                      <input type="checkbox" name="check" id="gyo" />餃子
+                      <br>
+                      <input type="checkbox" name="check" id="tya" />チャーシュー飯
+                      <br>
+                    </form>
+                    <input type="button" value="注文" onclick="lunch()">
+                  </div>
+     <script type="text/javascript">
+          function lunch() {
+            if(document.cookie==""){
+            for (var i = 0; i < cookie_form.radio.length; i++) {
+              if (cookie_form.radio[i].checked == true) {
+      
+                var ramen = cookie_form.radio[i].value;
+      
+                var han1 = cookie_form.check[0].checked;
+                var han2 = cookie_form.check[1].checked;
+                var han3 = cookie_form.check[2].checked;
+                var han4 = cookie_form.check[3].checked;
+      
+                var hoge = "";
+                var hoge2 = "";
+      
+                if (han1 == true) {
+                  hoge = hoge + "\n" + "大盛";
+                  hoge2 = hoge2 + "大盛";
+                }
+                if (han2 == true) {
+                  hoge = hoge + "\n" + "半チャーハン";
+                  hoge2 = hoge2 + "半チャーハン";
+                }
+                if (han3 == true) {
+                  hoge = hoge + "\n" + "餃子";
+                  hoge2 = hoge2 + "餃子";
+                }
+                if (han4 == true) {
+                  hoge = hoge + "\n" + "チャーシュー飯";
+                  hoge2 = hoge2 + "チャーシュー飯";
+                }
+                document.cookie = ramen + hoge2 + ";max-age=180;path=/";
+                alert("\n" + ramen + hoge + "\n" + "ですね？")
+      
+                
+                setTimeout("count()",120000);
+              }
+            }
+            }else{
+              alert("お客様は注文済みです。しばらくお待ちください");
+            }
+          }
+          function count(){
+            alert("へいお待ちどうさま！");
+          }
+        </script>
+</body>
+</html>
