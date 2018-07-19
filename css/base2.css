@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+
+body{
+ margin: 0;
+  padding: 0; 
+}
+
+header{
+  width: 100%;
+  height: 66px;
+  background: #fff;
+  border-top: 4px solid #0054a7; 
+  position: fixed;
+  z-index: 10;
+}
+
+li {
+	display: inline-block;
+  vertical-align: middle;
+  margin: 10px auto 40px 20px;
+}
+
+nav a{
+	  list-style-type: none;
+	  overflow: hidden;
+     margin-left:30px;
+     margin-right:20px;
+     padding-left: 10px;
+     padding-right: 10px;
+     text-decoration:none;
+     color: blue;
+}
+
+.inner{
+  max-width: 980px;
+  margin: auto;
+  padding-top:22px;
+}
+
+main{
+  max-width: 980px;
+  margin: auto;
+}
+
+main h2{
+  text-align: center;
+}
+
+main h2 img{
+  max-width: 100%;
+}
+
+.movie{
+  background: #000;
+  width: 100%;
+  height: 407px;
+  text-align: center;
+  padding-top: 120px;
+  z-index: 0;
+}
+
+.taiken{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.taiken2{
+  width: 300px;
+  height:400px;
+  background: white;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.tokuten{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tokuten2{
+  width: 300px;
+  height:400px;
+  text-align: center;
+  border-right: 3px dotted #0054a7;
+}
+
+
+/*最後のtokuten2だけの設定*/
+.tokuten2:last-child{
+  border-right: 0px;
+}
+
+.tokuten2 p{
+  text-align: left;
+}
+
+.suke{
+  max-width: 980px;
+  margin: auto;
+}
+
+.suke2 h3{
+  margin-top: -75px;
+  margin-left: 100px;
+}
+
+.suke2 p{
+  margin-left: 100px;
+  margin-top: -10px;
+}
+
+.qa{
+  max-width: 980px;
+  margin: auto;
+}
+
+.qa p{
+  font-size: 27px;
+}
+
+.qa span{
+  padding-right: 20px;
+}
+
+.qa .ques{
+  color: cornflowerblue;
+}
+
+.qa .anws{
+  color: lightcoral;
+}
+
+.kyanpasu{
+  font-size: 45px;
+  color: cornflowerblue;
+  margin-top: -20px;
+}
+
+.square_btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background: cornflowerblue;
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px darkblue;
+}
+
+.square_btn:active {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+footer{
+  width: 100%;
+  height: 170px;
+  background: #999;
+}
+
+.moji{
+  font-size: 25px;
+}
+
+.moji2{
+  font-size: 15px;
+  margin-top: -25px;
+}
+
+.moji3{
+  font-size: 30px;
+  margin-top: -20px;
+}
