@@ -125,6 +125,11 @@ section h2 span {
 	height: auto;
 }
 
+form{
+	width: 55%;
+	margin: auto;
+}
+
 
 /* RESPONSIVE 設定
 ------------------------------------------------------------*/
